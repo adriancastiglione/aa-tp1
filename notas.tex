@@ -6,6 +6,13 @@
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 \usepackage{verbatim}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\providecommand*{\code}[1]{\texttt{#1}}
+
+\makeatother
+
 \usepackage{babel}
 \begin{document}
 
@@ -48,4 +55,9 @@ flexibilidad en la elección de hiperparámetros para ajustarlos después.
 \textbf{En resumen:} vamos a tomar, en principio, un $50\%$ de las
 $500$ instancias para entrenamiento, y la otra mitad reservadas como
 \emph{held-out.}
+
+\section{Primeros modelos}
+
+Primero creamos el árbol de decisión vacío con \code{max\-depth = 3}\\
+
 \end{document}
