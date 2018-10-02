@@ -1,0 +1,51 @@
+%% LyX 2.3.0 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{verbatim}
+\usepackage{babel}
+\begin{document}
+
+\title{Notas para TP1}
+\maketitle
+
+\section{Separación de datos para validación.}
+
+En principio hay que reservar instancias para el \emph{held-out. }De
+los y tenemos 229 que son True (casi la mitad de 500). \\
+(Si la proporción de True/False no fuera la mitad, y reservamos para
+\emph{held-out} algunos con la mitad de True y la mitad de False;
+no estaríamos sesgando al algoritmo?)\\
+
+Opciones: 
+\begin{itemize}
+\item Separar al azar un porcentaje de las instancias
+\item Ultimas o primeras
+\end{itemize}
+\begin{comment}
+Por ahora no tenemos mucha información sobre qué datos o atributos
+son más importantes.. en principio esto decanta en separar de forma
+random.
+\end{comment}
+
+\textbf{Importante: }Tenemos que tener en cuenta \emph{la competencia}.
+En primer lugar tenemos 500 instancias disponibles, a dividir entre
+entrenamiento y \emph{held-out; }mientras que los de competencia,
+únicamente para evaluación, son 5000. \\
+Si en un caso extremo tomamos los 500 datos para entrenamiento, igualmente
+tendríamos diez veces más datos sobre los cuales tendría que validarse
+(\emph{competencia }como \emph{production}). Entonces, si tomamos
+un porcentaje no-alto para entrenamiento, (por ejemplo reservando
+$50\%$ para \emph{held-out}), se estaría reflejando masomenos verídicamente
+la situación. \\
+También, el $50\%$ de \emph{held-out} puede reducirse gradualmente
+si las pruebas de validación dan horribles. De esa manera, guardamos
+flexibilidad en la elección de hiperparámetros para ajustarlos después.
+
+\textbf{En resumen:} vamos a tomar, en principio, un $50\%$ de las
+$500$ instancias para entrenamiento, y la otra mitad reservadas como
+\emph{held-out.}
+\end{document}
